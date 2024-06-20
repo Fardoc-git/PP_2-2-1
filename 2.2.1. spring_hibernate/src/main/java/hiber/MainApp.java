@@ -16,14 +16,16 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru"
-              , new Car("gds", 0)));
-      userService.add(new User("User2", "Lastname2", "user2@mail.ru"
-              , new Car("bsd", 4)));
-      userService.add(new User("User3", "Lastname3", "user3@mail.ru"
-              , new Car("bidl", 23)));
-      userService.add(new User("User4", "Lastname4", "user4@mail.ru"
-              , new Car("jdj", 10000000)));
+      userService.add(
+              new User("User1", "Lastname1", "user1@mail.ru", new Car("gds", 0)));
+      userService.add(
+              new User("User2", "Lastname2", "user2@mail.ru", new Car("bsd", 4)));
+      userService.add(
+              new User("User3", "Lastname3", "user3@mail.ru", new Car("bid", 23)));
+      userService.add(
+              new User("User4", "Lastname4", "user4@mail.ru", new Car("jdj", 1)));
+
+      System.out.println(userService.getUserByCar("bsd", 4));
 
       List<User> users = userService.listUsers();
       for (User user : users) {
